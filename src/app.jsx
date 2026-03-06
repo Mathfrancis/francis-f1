@@ -36,7 +36,7 @@ async function fetchJSON(url) {
 }
 
 async function getLatestSession(type) {
-  const data = await fetchJSON(`${F1_API}/sessions?session_type=${type}&year=2025`);
+  const data = await fetchJSON(`${F1_API}/sessions?session_type=${type}&year=2026`);
   if (!data || !data.length) return null;
   return data[data.length - 1];
 }
