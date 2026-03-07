@@ -67,6 +67,7 @@ const FALLBACK_DRIVERS = [
 ];
 
 async function getDrivers(sessionKey) {
+  if (!sessionKey) return FALLBACK_DRIVERS;
   const data = await fetchJSON(`${F1_API}/drivers?session_key=${sessionKey}`);
   if (data && data.length) {
     return data.sort((a, b) => (a.driver_number || 99) - (b.driver_number || 99));
